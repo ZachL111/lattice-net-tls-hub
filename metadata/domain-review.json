@@ -1,0 +1,73 @@
+{
+  "repo": "lattice-net-tls-hub",
+  "language": "TypeScript",
+  "category": "Networking",
+  "goal": "Design a TypeScript verification harness for tls systems, covering storage recovery, log and snapshot fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "packet span",
+      "retry pressure",
+      "route drift",
+      "socket risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "packet span",
+      "signal": 62,
+      "slack": 47,
+      "drag": 10,
+      "confidence": 49,
+      "score": 190,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry pressure",
+      "signal": 71,
+      "slack": 52,
+      "drag": 17,
+      "confidence": 58,
+      "score": 201,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "route drift",
+      "signal": 64,
+      "slack": 41,
+      "drag": 11,
+      "confidence": 48,
+      "score": 184,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "socket risk",
+      "signal": 51,
+      "slack": 49,
+      "drag": 12,
+      "confidence": 83,
+      "score": 198,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "packet span",
+      "signal": 57,
+      "slack": 32,
+      "drag": 26,
+      "confidence": 54,
+      "score": 122,
+      "lane": "watch"
+    }
+  ]
+}
